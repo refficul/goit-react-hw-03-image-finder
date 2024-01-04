@@ -5,6 +5,7 @@ import {
   SearchButton,
   FormInput,
 } from './Searchbar.styled';
+import { FcSearch } from 'react-icons/fc';
 
 // export class SearchBar extends Component {
 //   state = {
@@ -63,7 +64,7 @@ export class SearchBar extends Component {
       // toast.error('Please enter a search value');
       return;
     }
-    
+
     onSubmit(query);
   };
 
@@ -72,10 +73,15 @@ export class SearchBar extends Component {
     const { query } = this.state;
 
     return (
-      <SearchBarWrapper direction="horizontal" className="justify-content-center mt-5">
+      <SearchBarWrapper
+        direction="horizontal"
+        className="justify-content-center mt-5"
+      >
         <SearchForm className="d-flex" onSubmit={handleSubmit}>
-        <SearchButton type="submit">
-            <span>Search</span>
+          <SearchButton type="submit">
+            <span>
+              <FcSearch size="18" />
+            </span>
           </SearchButton>
 
           <FormInput
@@ -88,7 +94,6 @@ export class SearchBar extends Component {
             onChange={handleSearchQueryChange}
             value={query}
           />
-          
         </SearchForm>
       </SearchBarWrapper>
     );
